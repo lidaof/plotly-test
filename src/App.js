@@ -1,26 +1,47 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Plot from 'react-plotly.js';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+    
+      <div>
+
+      <Plot
+        data={[
+          {
+            y: [1, 2, 3, 4, 4, 4, 8, 9, 10],
+            type: 'box',
+            name: 'Sample A',
+            marker:{
+              color: 'rgb(214,12,140)'
+            }
+          },
+          {
+            y: [2, 3, 3, 3, 3, 5, 6, 6, 7],
+            type: 'box',
+            name: 'Sample B',
+            marker:{
+              color: 'rgb(0,128,128)'
+            }
+          },
+        ]}
+        layout={{width: 800, height: 600, title: 'Colored Box Plot',showlegend: false}}
+        config = {{
+          toImageButtonOptions: {
+            format: 'svg', // one of png, svg, jpeg, webp
+            filename: 'gene_plot',
+            height: 600,
+            width: 800,
+            scale: 1, // Multiply title/legend/axis/canvas sizes by this factor
+          },
+          displaylogo: false
+        }}
+      />
+
+
+            </div>
+
     );
   }
 }
