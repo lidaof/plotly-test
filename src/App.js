@@ -35,7 +35,9 @@ class App extends Component {
             width: 800,
             scale: 1, // Multiply title/legend/axis/canvas sizes by this factor
           },
-          displaylogo: false
+          displaylogo: false,
+          responsive: true,
+          modeBarButtonsToRemove: ['select2d', 'lasso2d', 'toggleSpikelines'],
         }}
       />
 
